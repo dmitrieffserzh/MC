@@ -188,5 +188,14 @@ body {
   ======================================================================================================================
 */
 .footer {
-
+  &__container {
+    @extend .container;
+  }
+  &__copyright {
+    @extend .container;
+    font-size: .9rem;
+    color: #a5b0db;
+    text-align: center;
+    line-height: 3;
+  }
 }
