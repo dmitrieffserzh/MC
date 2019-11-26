@@ -131,39 +131,47 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
+  width: 2rem;
   background: transparent;
   border: none;
-  line-height: 1;
+  line-height: 0;
   z-index: 120;
 }
-/* line 68, style.scss */
-.btn-menu .circle {
-  fill: #2d2d2d;
+/* line 69, style.scss */
+.btn-menu__line {
+  display: block;
+  float: left;
+  margin: 2px 0;
+  height: 2px;
+  width: 100%;
+  background: #2d2d2d;
   transition: all .15s Linear;
 }
+/* line 77, style.scss */
+.btn-menu__line:nth-child(2) {
+  width: 1rem;
+  background: #ff004e;
+}
 
-/* line 74, style.scss */
+/* line 84, style.scss */
 .splash {
   transition: all .3s Linear;
 }
 
-/* line 79, style.scss */
+/* line 89, style.scss */
 .menu-open {
   overflow: hidden;
 }
-/* line 81, style.scss */
+/* line 91, style.scss */
 .menu-open .main-menu {
   right: 0;
 }
-/* line 85, style.scss */
-.menu-open .btn-menu .circle {
-  fill: #e4e8f1;
+/* line 96, style.scss */
+.menu-open .btn-menu__line:nth-child(2) {
+  float: right;
+  background: #ff004e;
 }
-/* line 87, style.scss */
-.menu-open .btn-menu .circle:nth-child(2), .menu-open .btn-menu .circle:nth-child(6), .menu-open .btn-menu .circle:nth-child(8) {
-  fill: #ff004e;
-}
-/* line 94, style.scss */
+/* line 102, style.scss */
 .menu-open .splash {
   position: absolute;
   z-index: 101;
@@ -177,19 +185,19 @@ body {
   background: #000;
 }
 
-/* line 109, style.scss */
+/* line 117, style.scss */
 .main-menu__list {
   margin: 0;
   padding: 0;
   font-size: 0;
   list-style: none;
 }
-/* line 115, style.scss */
+/* line 123, style.scss */
 .main-menu__item {
   display: inline-block;
   position: relative;
 }
-/* line 119, style.scss */
+/* line 127, style.scss */
 .main-menu__link {
   display: block;
   padding: .5rem;
@@ -203,7 +211,7 @@ body {
   -webkit-transition: all 0.3s Linear;
   transition: all 0.3s Linear;
 }
-/* line 128, style.scss */
+/* line 136, style.scss */
 .main-menu__link:after {
   content: '';
   position: absolute;
@@ -218,11 +226,11 @@ body {
   -webkit-transition: all 0.15s Linear;
   transition: all 0.15s Linear;
 }
-/* line 139, style.scss */
+/* line 147, style.scss */
 .main-menu__link:hover {
   color: #ff004e;
 }
-/* line 141, style.scss */
+/* line 149, style.scss */
 .main-menu__link:hover:after {
   left: 0;
   width: 100%;
@@ -230,12 +238,12 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 151, style.scss */
+  /* line 159, style.scss */
   .btn-menu {
     display: block;
   }
 
-  /* line 154, style.scss */
+  /* line 162, style.scss */
   .main-menu {
     display: block;
     position: absolute;
@@ -249,11 +257,11 @@ body {
     transition: all .15s Ease;
     z-index: 110;
   }
-  /* line 166, style.scss */
+  /* line 174, style.scss */
   .main-menu__item {
     display: block !important;
   }
-  /* line 169, style.scss */
+  /* line 177, style.scss */
   .main-menu__link {
     color: #2c4792 !important;
     font-weight: 700 !important;
@@ -264,18 +272,18 @@ body {
   MAIN
   ======================================================================================================================
 */
-/* line 181, style.scss */
+/* line 189, style.scss */
 .main {
   padding: 0;
   margin: 0;
   min-height: 3000px;
 }
 
-/* line 186, style.scss */
+/* line 194, style.scss */
 .section {
   padding: 3rem 0;
 }
-/* line 191, style.scss */
+/* line 199, style.scss */
 .section__title {
   position: relative;
   padding: 1rem 0;
@@ -284,7 +292,7 @@ body {
   letter-spacing: .05rem;
   text-transform: uppercase;
 }
-/* line 198, style.scss */
+/* line 206, style.scss */
 .section__title:after {
   content: '';
   position: absolute;
@@ -294,7 +302,7 @@ body {
   height: 2px;
   background: #ff004e;
 }
-/* line 208, style.scss */
+/* line 216, style.scss */
 .section__tagline {
   padding: 1rem 0;
   font-size: .9rem;
@@ -302,12 +310,12 @@ body {
   letter-spacing: .05rem;
   text-transform: uppercase;
 }
-/* line 216, style.scss */
+/* line 224, style.scss */
 .section--light-blue {
   background: #f5f9fb;
 }
 
-/* line 222, style.scss */
+/* line 230, style.scss */
 .container, .header__container, .section__container, .footer__container, .footer__copyright {
   padding: 0 1rem;
   margin: 0 auto;
@@ -318,7 +326,7 @@ body {
   FOOTER
   ======================================================================================================================
 */
-/* line 236, style.scss */
+/* line 244, style.scss */
 .footer__copyright {
   font-size: .9rem;
   color: #a5b0db;

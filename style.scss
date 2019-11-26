@@ -61,13 +61,23 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
+  width: 2rem;
   background: transparent;
   border: none;
-  line-height: 1;
+  line-height: 0;
   z-index: 120;
-  & .circle {
-    fill: #2d2d2d;
+  &__line {
+    display: block;
+    float: left;
+    margin: 2px 0;
+    height: 2px;
+    width: 100%;
+    background: #2d2d2d;
     transition: all .15s Linear;
+    &:nth-child(2) {
+      width: 1rem;
+      background: #ff004e;
+    }
   }
 }
 
@@ -82,12 +92,10 @@ body {
     right: 0;
   }
   & .btn-menu {
-    & .circle {
-      fill: #e4e8f1;
-      &:nth-child(2),
-      &:nth-child(6),
-      &:nth-child(8) {
-        fill: #ff004e;
+    &__line {
+      &:nth-child(2) {
+        float: right;
+        background: #ff004e;
       }
     }
   }
