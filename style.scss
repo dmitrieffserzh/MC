@@ -24,6 +24,7 @@ body {
   width: 100%;
 }
 body {
+  padding: 4rem 0 0;
   font-family: $font-family;
   font-size: 1rem;
   color: $text-color;
@@ -38,7 +39,9 @@ body {
   left: 0;
   right: 0;
   padding: 1rem 0;
+  background: #fff;
   @include box-shadow($box-shadow-lite);
+  z-index: 100;
   &__container {
     @include display-flex();
     @include flex-direction(row);
@@ -54,6 +57,7 @@ body {
 }
 
 .btn-menu {
+  display: none;
   position: relative;
   margin: 0;
   padding: 0;
@@ -100,7 +104,7 @@ body {
     background: #000;
   }
 }
-
+// MAIN MENU
 .main-menu {
   &__list {
     margin: 0;
@@ -144,6 +148,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .btn-menu {
+    display: block;
+  }
   .main-menu {
     display: block;
     position: absolute;
@@ -176,6 +183,41 @@ body {
   margin: 0;
   min-height: 3000px;
 }
+.section {
+  padding: 3rem 0;
+  &__container {
+    @extend .container;
+  }
+  &__title {
+    position: relative;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color: #000;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 2rem;
+      height: 2px;
+      background: #ff004e;
+    }
+  }
+  &__tagline {
+    padding: 1rem 0;
+    font-size: .9rem;
+    color: #718baf;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+  }
+  // MODIFIED BACKGROUND COLORS
+  &--light-blue {
+    background: #f5f9fb;
+  }
+}
+
 
 .container {
   padding: 0 1rem;
