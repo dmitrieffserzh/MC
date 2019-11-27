@@ -162,11 +162,11 @@ body {
       @include transition(all .15s Linear);
     }
     &:hover {
-      color: #ff004e;
+      color: #ffc300;
       &:after {
         left: 0;
         width: 100%;
-        background: #ff004e;
+        background: #ffc300;
       }
     }
   }
@@ -174,7 +174,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
   .btn-menu {
     display: block;
@@ -219,7 +219,7 @@ body {
 
 // MAIN SECTION
 .main-section {
-  @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(0, 17, 78, 0.85) 100%), url('img/ma1.jpg'));
+  @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(0, 17, 78, 0.85) 100%), url('img/565.jpg'));
   @include background-size(cover);
   background-repeat: no-repeat;
   background-position: center center;
@@ -315,7 +315,10 @@ body {
   background-repeat: no-repeat !important;
   background-position: center center !important;
   &--portfolio {
-    @include background(linear-gradient(45deg, rgba(23, 23, 31, 0.9) 0, #17171f 100%), url(//web.archive.org/web/20180329085227im_/http://mcreate.ru/wp-content/themes/mcreate/img/bg_2.jpg));
+    @include background(linear-gradient(45deg, rgba(23, 23, 31, 0.9) 0, #17171f 100%), url('img/bg_2.jpg'));
+  }
+  &--testimonials {
+    @include background(linear-gradient(45deg, rgba(23, 23, 31, 0.9) 0, #17171f 100%), url('img/53.jpg'));
   }
   &--contacts {
     @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(11, 21, 60, 0.95) 100%), url('img/bg_contcats.jpg'));
