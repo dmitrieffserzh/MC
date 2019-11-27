@@ -26,3 +26,29 @@ $(function () {
         }
     });
 });
+
+
+/* SCROLL PAGE >>
+=================================================================================================== */
+$(function () {
+    function addClassScroll() {
+        $('body').addClass('scroll');
+    }
+
+    function removeClassScroll() {
+        $('body').removeClass('scroll');
+    }
+
+    if ($(window).scrollTop() >= 5) {
+        addClassScroll();
+    }
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 5) {
+            addClassScroll();
+        } else {
+            removeClassScroll();
+        }
+    });
+
+});

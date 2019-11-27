@@ -6,7 +6,7 @@
 // =====================================================================================================================
 $font-family: 'Montserrat', sans-serif !important;
 $text-color: #212121;
-$box-shadow-lite: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+$box-shadow-lite: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
 
 /*
   GLOBAL
@@ -23,12 +23,20 @@ body {
   height: 100%;
   width: 100%;
 }
+
 body {
-  padding: 4rem 0 0;
+  padding: 0;
   font-family: $font-family;
   font-size: 1rem;
   color: $text-color;
+  line-height: 1.45;
+  text-rendering: geometricPrecision;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
+
 /*
   HEADER
   ======================================================================================================================
@@ -38,10 +46,9 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 1rem 0;
-  background: #fff;
-  @include box-shadow($box-shadow-lite);
+  padding: 2rem 0;
   z-index: 100;
+  @include transition(padding .15s Linear, background .15s Linear);
   &__container {
     @include display-flex();
     @include flex-direction(row);
@@ -72,7 +79,7 @@ body {
     margin: 2px 0;
     height: 2px;
     width: 100%;
-    background: #2d2d2d;
+    background: #fff;
     transition: all .15s Linear;
     &:nth-child(2) {
       width: 1rem;
@@ -112,6 +119,16 @@ body {
     background: #000;
   }
 }
+
+// SCROLL PAGE
+.scroll {
+  .header {
+    padding: 1rem 0;
+    background: #191923;
+    @include box-shadow($box-shadow-lite);
+  }
+}
+
 // MAIN MENU
 .main-menu {
   &__list {
@@ -128,7 +145,7 @@ body {
     display: block;
     padding: .5rem;
     font-size: .8rem;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: .4px;
@@ -157,7 +174,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: .5rem 0;
+    padding: 1rem 0;
   }
   .btn-menu {
     display: block;
@@ -170,7 +187,7 @@ body {
     padding: 3rem 0;
     width: 70%;
     height: 110vh;
-    background: #fff;
+    background: #191923;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.45);
     transition: all .15s Ease;
     z-index: 110;
@@ -178,7 +195,7 @@ body {
       display: block !important;
     }
     &__link {
-      color: #2c4792 !important;
+      color: #ffc300 !important;
       font-weight: 700 !important;
       line-height: 1.5 !important;
     }
@@ -192,44 +209,7 @@ body {
 .main {
   padding: 0;
   margin: 0;
-  min-height: 3000px;
 }
-.section {
-  padding: 3rem 0;
-  min-height: 600px;
-  &__container {
-    @extend .container;
-  }
-  &__title {
-    position: relative;
-    padding: 1rem 0;
-    font-size: 1.2rem;
-    color: #000;
-    letter-spacing: .05rem;
-    text-transform: uppercase;
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 2rem;
-      height: 2px;
-      background: #ff004e;
-    }
-  }
-  &__tagline {
-    padding: 1rem 0;
-    font-size: .9rem;
-    color: #718baf;
-    letter-spacing: .05rem;
-    text-transform: uppercase;
-  }
-  // MODIFIED BACKGROUND COLORS
-  &--light-blue {
-    background: #f5f9fb;
-  }
-}
-
 
 .container {
   padding: 0 1rem;
@@ -237,9 +217,119 @@ body {
   max-width: calc(1280px - 2rem);
 }
 
+// MAIN SECTION
+.main-section {
+  @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(0, 17, 78, 0.85) 100%), url('img/ma1.jpg'));
+  @include background-size(cover);
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 800px;
+
+  &__container {
+    padding: 20% 0 10%;
+    @extend .container;
+  }
+  &__promo {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__title {
+    margin: 3% auto 0;
+    font-size: 1.45rem;
+    color: #ffc300;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4em;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    margin: 20px auto;
+    width: 80%;
+    color: #9b9ab9;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 768px) {
+  .main-section {
+    &__container {
+      padding: 50% 0 10%;
+    }
+    &__promo {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.section {
+  padding: 4rem 0;
+  min-height: 600px;
+  &__container {
+    @extend .container;
+  }
+  &__header {
+    padding: 1rem 0;
+  }
+  &__title {
+    display: block;
+    position: relative;
+    padding: 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: .15rem;
+    text-align: center;
+    text-transform: uppercase;
+    &:after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 1.5rem);
+      bottom: -.3rem;
+      height: 1rem;
+      width: 3rem;
+      @include background(url('img/title_bg.png'));
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  &__subtitle {
+    display: block;
+    padding: 1rem 0;
+    font-size: .8rem;
+    color: #daaf11;
+    letter-spacing: .15rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+// SECTIONS MODIFIED
+.section {
+  @include background-size(cover !important);
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  &--portfolio {
+    @include background(linear-gradient(45deg, rgba(23, 23, 31, 0.9) 0, #17171f 100%), url(//web.archive.org/web/20180329085227im_/http://mcreate.ru/wp-content/themes/mcreate/img/bg_2.jpg));
+  }
+  &--contacts {
+    @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(11, 21, 60, 0.95) 100%), url('img/bg_contcats.jpg'));
+  }
+}
+
+// MEDIA QUERIES
 @media screen and (max-width: 768px) {
   .section {
     padding: 1.5rem 0;
+    &__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
   }
 }
 
@@ -248,39 +338,17 @@ body {
   ======================================================================================================================
 */
 .footer {
-  &__container {
-    @extend .container;
-  }
   &__copyright {
     @extend .container;
-    font-size: .9rem;
-    color: #a5b0db;
+    margin: -3rem auto 0;
+    font-size: .8rem;
+    color: #323544;
     text-align: center;
     line-height: 3;
-  }
-}
-
-
-/*
-  MAIN
-  ======================================================================================================================
-*/
-
-.testimonials {
-  display: block;
-  padding: 1rem 0 4rem;
-
-  &-item {
-    &__title {
-      padding: 0 0 1rem;
-      font-weight: 600;
-      color: #212121;
-      text-align: center;
-    }
-    &__text {
-      font-size: .9rem;
-      color: #2d2d2d;
-      text-align: center;
+    @include transition(color .3s Linear);
+    &:hover {
+      color: #fff;
     }
   }
 }
+

@@ -122,8 +122,8 @@
     display: inline-block;
     width: 3rem;
     height: 3rem;
-    color: #000;
-    background: rgba(186, 209, 224, 0.63);
+    color: #3c3c3c;
+    background: #d7dce8;
     border-radius: .25rem;
     transition: all .3s Linear;
 }
@@ -155,9 +155,9 @@
 .owl-carousel .owl-dots button.owl-dot {
     height: 50px;
     width: 40px;
-    /*font-weight: 600;*/
+    font-weight: 600;
     font-size: 13px;
-    color: #000;
+    color: #818294;
     line-height: 1;
     cursor: pointer;
     transition: color .3s Linear;
