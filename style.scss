@@ -2,11 +2,16 @@
 @import "compass/reset";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&amp;display=swap&amp;subset=cyrillic');
 
+// FONT AWESOME
+@import "scss/icons/fontawesome.scss";
+@import "scss/icons/solid.scss";
+
+
 // VARIABLES
 // =====================================================================================================================
 $font-family: 'Montserrat', sans-serif !important;
 $text-color: #212121;
-$box-shadow-lite: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
+$box-shadow-lite: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
 
 /*
   GLOBAL
@@ -46,20 +51,58 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 2rem 0;
+  padding: 3rem 0;
   z-index: 100;
-  @include transition(padding .15s Linear, background .15s Linear);
+  line-height: 3;
+  @include transition(padding .1s Linear, background .15s Linear);
   &__container {
+    @extend .container;
+  }
+  &__wrapper {
     @include display-flex();
     @include flex-direction(row);
     @include justify-content(space-between);
     @include align-items(center);
-    @extend .container;
+    &--top-line {
+      border-bottom: 1px Solid rgba(255, 255, 255, .1);
+    }
   }
   &__logo {
     display: inline-block;
     width: 10rem;
     line-height: 0;
+  }
+  &__tagline {
+    @include flex(1);
+    margin: 0 1rem;
+    padding: 0 1rem;
+    border-left: 1px Solid rgba(255, 255, 255, .1);
+    font-size: .7rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    line-height: 1.45;
+  }
+  &__contacts {
+    font-size: .8rem;
+    color: #bebfcc;
+    line-height: 2.5rem;
+    & span {
+      padding: 0 .5rem;
+    }
+    &-link {
+      padding: 0 .5rem;
+      color: #bebfcc;
+      text-decoration: none !important;
+      @include transition(color .3s Linear);
+      &:hover {
+        color: #fff;
+      }
+      &--callback {
+        color: #f3be00;
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
@@ -71,12 +114,12 @@ body {
   width: 2rem;
   background: transparent;
   border: none;
+  text-align: initial;
   line-height: 0;
   z-index: 120;
   &__line {
-    display: block;
-    float: left;
-    margin: 2px 0;
+    display: inline-block;
+    margin: 3px 0;
     height: 2px;
     width: 100%;
     background: #fff;
@@ -101,7 +144,7 @@ body {
   & .btn-menu {
     &__line {
       &:nth-child(2) {
-        float: right;
+        margin: 3px 0 3px 1rem;
         background: #ff004e;
       }
     }
@@ -116,15 +159,15 @@ body {
     height: 110vh;
     transition: all .3s Linear;
     opacity: .6;
-    background: #000;
+    background: #1d1f27;
   }
 }
 
 // SCROLL PAGE
 .scroll {
   .header {
-    padding: 1rem 0;
-    background: #191923;
+    padding: 0;
+    background: #1d1f27;
     @include box-shadow($box-shadow-lite);
   }
 }
@@ -174,8 +217,17 @@ body {
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    &__wrapper {
+      &--top-line {
+        display: none;
+      }
+    }
+    &__tagline {
+      display: none;
+    }
   }
+
   .btn-menu {
     display: block;
   }
@@ -187,7 +239,7 @@ body {
     padding: 3rem 0;
     width: 70%;
     height: 110vh;
-    background: #191923;
+    background: #1d1f27;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.45);
     transition: all .15s Ease;
     z-index: 110;
@@ -198,6 +250,11 @@ body {
       color: #ffc300 !important;
       font-weight: 700 !important;
       line-height: 1.5 !important;
+    }
+  }
+  .scroll {
+    .header {
+      padding: .5rem 0;
     }
   }
 }
@@ -219,7 +276,7 @@ body {
 
 // MAIN SECTION
 .main-section {
-  @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(0, 17, 78, 0.85) 100%), url('img/565.jpg'));
+  @include background(linear-gradient(45deg, rgba(0, 0, 0, 0.81) 0, rgba(0, 17, 78, 0.85) 100%), url('img/ma1.jpg'));
   @include background-size(cover);
   background-repeat: no-repeat;
   background-position: center center;
@@ -237,7 +294,7 @@ body {
     text-align: center;
   }
   &__title {
-    margin: 3% auto 0;
+    padding: 2rem;
     font-size: 1.45rem;
     color: #ffc300;
     font-weight: bold;
@@ -246,9 +303,10 @@ body {
     text-transform: uppercase;
   }
   &__subtitle {
-    margin: 20px auto;
-    width: 80%;
-    color: #9b9ab9;
+    padding: 2rem;
+    margin: 0 auto;
+    width: 65%;
+    color: #8c8ba0;
     line-height: 1.4;
     text-transform: uppercase;
     text-align: center;
@@ -262,7 +320,17 @@ body {
       padding: 50% 0 10%;
     }
     &__promo {
+      padding: 1rem;
       font-size: 2.5rem;
+    }
+    &__title {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    &__subtitle {
+      padding: 0 1rem;
+      width: auto;
+      font-size: .8rem;
     }
   }
 }
