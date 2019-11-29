@@ -1,11 +1,9 @@
 @import "compass";
 @import "compass/reset";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&amp;display=swap&amp;subset=cyrillic');
-
 // FONT AWESOME
 @import "scss/icons/fontawesome.scss";
 @import "scss/icons/solid.scss";
-
 
 // VARIABLES
 // =====================================================================================================================
@@ -434,59 +432,59 @@ body {
   }
 }
 
-
 /*
   CONTACT FORM
   ======================================================================================================================
 */
 .contact-form {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
   &__wrapper {
     @include display-flex();
     @include flex-direction(column);
-    @include justify-content(space-between);
+    @include justify-content(space-beetwin);
   }
   &__row {
     @include display-flex();
-    @include flex-direction(row);
-    @include justify-content(space-between);
   }
   &__input {
-    margin: 1rem;
-    padding: 1rem;
+    @include flex(1);
+    margin: .5rem;
+    padding: .75rem;
     border: 1px Solid rgba(255, 255, 255, .15);
     background: transparent;
-    width: 50%;
-    color: #fff;
-    @include border-radius(.25rem);
-    @include transition(all .3s Linear);
+    color: #8b8da0;
+    @include box-sizing(border-box);
+    @include transition(border .3s Linear);
     &:focus {
-      border: 1px Solid #daaf11;
+      border: 1px Solid rgba(218, 175, 17, 0.5);
     }
   }
   &__textarea {
-    margin: 1rem;
-    padding: 1rem;
+    @include flex(1);
+    margin: .5rem;
+    padding: .75rem;
     border: 1px Solid rgba(255, 255, 255, .15);
     background: transparent;
     width: 100%;
-    color: #fff;
-    @include border-radius(.25rem);
-    @include transition(all .3s Linear);
+    max-height: 250px;
+    min-height: 100px;
+    color: #8b8da0;
+    @include box-sizing(border-box);
+    @include transition(border .3s Linear);
     &:focus {
-      border: 1px Solid #daaf11;
+      border: 1px Solid rgba(218, 175, 17, 0.5);
     }
   }
   &__submit {
     display: block;
     margin: 1rem auto;
-    padding: .5rem 1rem;
+    padding: .75rem 1.5rem;
     border: 1px Solid #daaf11;
     background: transparent;
     color: #daaf11;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
-    @include border-radius(.25rem);
     @include transition(all .3s Linear);
     &:hover {
       border: 1px Solid #fff;
@@ -500,8 +498,7 @@ body {
   .contact-form {
     &__row {
       @include display-flex();
-      @include flex-direction(column);
-      @include justify-content(space-between);
+      @include flex-wrap(wrap);
     }
   }
 }

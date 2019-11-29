@@ -1,6 +1,6 @@
 /* Slider */
 
-.slick-slider {
+.slider-slider {
     position: relative;
     display: block;
     box-sizing: border-box;
@@ -14,7 +14,7 @@
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
-.slick-list {
+.slider-list {
     position: relative;
     overflow: hidden;
     display: block;
@@ -30,8 +30,8 @@
         cursor: hand;
     }
 }
-.slick-slider .slick-track,
-.slick-slider .slick-list {
+.slider .slider-track,
+.slider .slider-list {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -39,7 +39,7 @@
     transform: translate3d(0, 0, 0);
 }
 
-.slick-track {
+.slider-track {
     position: relative;
     left: 0;
     top: 0;
@@ -61,7 +61,7 @@
         visibility: hidden;
     }
 }
-.slick-slide {
+.slider-slide {
     float: left;
     height: 100%;
     min-height: 1px;
@@ -81,20 +81,20 @@
         pointer-events: none;
     }
 
-    .slick-initialized & {
+    .slider-initialized & {
         display: block;
     }
 
-    .slick-loading & {
+    .slider-loading & {
         visibility: hidden;
     }
 
-    .slick-vertical & {
+    .slider-vertical & {
         display: block;
         height: auto;
         border: 1px solid transparent;
     }
 }
-.slick-arrow.slick-hidden {
+.slider-arrow.slider-hidden {
     display: none;
 }
