@@ -126,6 +126,38 @@
                     Список некоторых проектов нашей компании
                 </p>
             </header>
+            <div class="portfolio">
+                <div class="portfolio__item">
+                    <a href="" class="portfolio__link">
+                        <img src="img/ma2.jpg" alt="" class="portfolio__image">
+                    </a>
+                </div>
+                <div class="portfolio__item">
+                    <a href="" class="portfolio__link">
+                        <img src="img/ma2.jpg" alt="" class="portfolio__image">
+                    </a>
+                </div>
+                <div class="portfolio__item">
+                    <a href="" class="portfolio__link">
+                        <img src="img/ma2.jpg" alt="" class="portfolio__image">
+                    </a>
+                </div>
+                <div class="portfolio__item">
+                    <a href="" class="portfolio__link">
+                        <img src="img/ma2.jpg" alt="" class="portfolio__image">
+                    </a>
+                </div>
+                <div class="portfolio__item">
+                    <a href="" class="portfolio__link">
+                        <img src="img/ma2.jpg" alt="" class="portfolio__image">
+                    </a>
+                </div>
+                <div class="portfolio__item">
+                    <a href="" class="portfolio__link">
+                        <img src="img/ma2.jpg" alt="" class="portfolio__image">
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -154,7 +186,18 @@
             </header>
 
             <form action="" class="contact-form">
-                input
+                <div class="contact-form__wrapper">
+                    <div class="contact-form__row">
+                        <input class="contact-form__input" type="text" name="" placeholder="Имя">
+                        <input class="contact-form__input" type="text" name="" placeholder="Телефон">
+                    </div>
+                    <div class="contact-form__row">
+                        <textarea class="contact-form__textarea" name="" id="" rows="3" placeholder="Сообщение"></textarea>
+                    </div>
+                    <div class="contact-form__row">
+                        <button class="contact-form__submit" type="submit">Отправить</button>
+                    </div>
+                </div>
             </form>
 
         </div>
@@ -175,6 +218,11 @@
 
 <script>
     $('.your-class').slick();
+    $('.portfolio').slick({
+        centerMode: true,
+        centerPadding: '30px',
+        slidesToShow: 3
+    });
 </script>
 
 

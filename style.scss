@@ -423,3 +423,85 @@ body {
   }
 }
 
+/*
+  PORTFOLIO
+  ======================================================================================================================
+*/
+
+.portfolio {
+  & img {
+    width: 100%;
+  }
+}
+
+
+/*
+  CONTACT FORM
+  ======================================================================================================================
+*/
+.contact-form {
+  margin: 0 auto;
+  max-width: 500px;
+  &__wrapper {
+    @include display-flex();
+    @include flex-direction(column);
+    @include justify-content(space-between);
+  }
+  &__row {
+    @include display-flex();
+    @include flex-direction(row);
+    @include justify-content(space-between);
+  }
+  &__input {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px Solid rgba(255, 255, 255, .15);
+    background: transparent;
+    width: 50%;
+    color: #fff;
+    @include border-radius(.25rem);
+    @include transition(all .3s Linear);
+    &:focus {
+      border: 1px Solid #daaf11;
+    }
+  }
+  &__textarea {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px Solid rgba(255, 255, 255, .15);
+    background: transparent;
+    width: 100%;
+    color: #fff;
+    @include border-radius(.25rem);
+    @include transition(all .3s Linear);
+    &:focus {
+      border: 1px Solid #daaf11;
+    }
+  }
+  &__submit {
+    display: block;
+    margin: 1rem auto;
+    padding: .5rem 1rem;
+    border: 1px Solid #daaf11;
+    background: transparent;
+    color: #daaf11;
+    text-transform: uppercase;
+    @include border-radius(.25rem);
+    @include transition(all .3s Linear);
+    &:hover {
+      border: 1px Solid #fff;
+      color: #fff;
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 768px) {
+  .contact-form {
+    &__row {
+      @include display-flex();
+      @include flex-direction(column);
+      @include justify-content(space-between);
+    }
+  }
+}

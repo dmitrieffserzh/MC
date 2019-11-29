@@ -7798,3 +7798,114 @@ body {
 .footer__copyright:hover {
   color: #fff;
 }
+
+/*
+  PORTFOLIO
+  ======================================================================================================================
+*/
+/* line 432, style.scss */
+.portfolio img {
+  width: 100%;
+}
+
+/*
+  CONTACT FORM
+  ======================================================================================================================
+*/
+/* line 442, style.scss */
+.contact-form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+/* line 445, style.scss */
+.contact-form__wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 450, style.scss */
+.contact-form__row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 455, style.scss */
+.contact-form__input {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px Solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  width: 50%;
+  color: #fff;
+  -moz-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  -moz-transition: all 0.3s Linear;
+  -o-transition: all 0.3s Linear;
+  -webkit-transition: all 0.3s Linear;
+  transition: all 0.3s Linear;
+}
+/* line 464, style.scss */
+.contact-form__input:focus {
+  border: 1px Solid #daaf11;
+}
+/* line 468, style.scss */
+.contact-form__textarea {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px Solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  width: 100%;
+  color: #fff;
+  -moz-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  -moz-transition: all 0.3s Linear;
+  -o-transition: all 0.3s Linear;
+  -webkit-transition: all 0.3s Linear;
+  transition: all 0.3s Linear;
+}
+/* line 477, style.scss */
+.contact-form__textarea:focus {
+  border: 1px Solid #daaf11;
+}
+/* line 481, style.scss */
+.contact-form__submit {
+  display: block;
+  margin: 1rem auto;
+  padding: .5rem 1rem;
+  border: 1px Solid #daaf11;
+  background: transparent;
+  color: #daaf11;
+  text-transform: uppercase;
+  -moz-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  -moz-transition: all 0.3s Linear;
+  -o-transition: all 0.3s Linear;
+  -webkit-transition: all 0.3s Linear;
+  transition: all 0.3s Linear;
+}
+/* line 491, style.scss */
+.contact-form__submit:hover {
+  border: 1px Solid #fff;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 501, style.scss */
+  .contact-form__row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+}
